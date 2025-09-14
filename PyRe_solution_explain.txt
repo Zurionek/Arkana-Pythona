@@ -1,0 +1,22 @@
+Opis rozwiązania zadania
+
+1)Sprawdzamy czym jest plik PyRE.py za pomocą komendy file PyRe.py uruchomionej w terminalu
+2)Okazuje się, że PyRE.py jest plikiem zip
+3)Uruchamiamy komende unzip PyRE.py
+4)Otrzymujemy plik __main__.pyc
+5)Jest to skompilowana wersja cPythona - musimy ją zdekompilowac
+6)Używamy do tego narzędzia pylingual, które zainstalowaliśmy lokalnie (do doczytania jak zainstalować)
+7)Uruchamiamy komendą poetry shell środowisko wirtualne, które wcześniej należy stworzyć
+8)W tym środowisku uruchamiamy skrypt pylingual żeby zdekompilował nasz plik .pyc
+9)Otrzymujemy zdekompilowany plik .py
+10)W tym pliku widzimy jak zakodowana została nasza flaga:
+flag = base64.b32encode(base64.b64encode(flag.encode()))[::(-1)].hex()[::(-1)]
+11)Musimy odwrócić to kodowanie i zdekodować flagę - robimy to poprzez odwrócenie wszystkich wykonanych na fladze operacji
+12)Operacje te muszą być wykonywane od zewnątrz do wewnątrz funkcji:
+    #1 - reverse [::(-1)] by reversing it again
+    #2 - reverse .hex() with bytes.fromhex()
+    #3 - reverse [::(-1)] by reversing it again
+    #4 - reverse base64.b32encode by base64.b32decode
+    #5 - reverse base.64.b64encode by base64.b64decode
+    #6 - reverse flag.encode() by flag.decode()
+13)Po wykonaniu tych operacji printujemy poprawną, zdekodowaną flagę

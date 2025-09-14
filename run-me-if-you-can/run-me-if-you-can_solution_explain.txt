@@ -1,0 +1,10 @@
+Opis rozwiązania zadania
+
+1)Na podstawie dostepnego juz w kodzie print_flag - stworzylismy prosty code object i dalismy mu parametry
+2)Czesci parametrow mozna sie domyslec, czesc widac w print_flag, czesc to strzały, ale malo istotne
+3)Potem do print_flag przypisujemy nasz code object owiniety w function object
+
+Tym razem dostajemy funkcję – a w zasadzie jej kod bajtowy – która od razu wypiszę nam flagę.
+Wiemy nawet, jak ta funkcja jest wywołana, tj. wiemy ile jest parametrów i jakie to parametry.
+Co za tym idzie, wystarczy stworzyć jakikolwiek (hint: jak najprostszy) kompatybilny obiekt code
+oraz function, i uruchomić tak uzyskaną funkcje. Robimy to za pomocą zaimportowanej biblioteki types.

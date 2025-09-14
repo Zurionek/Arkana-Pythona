@@ -1,0 +1,17 @@
+Opis rozwiązania zadania
+1)W zadaniu brakuje jednej funkcji, ale mamy wynik dis.dis() z dezasemblacji
+2)Krok po kroku analizując dezasemblacje jesteśmy w stanie stworzyć stos
+3)Kolejne opreacje ze stosu prowadzą nas do stworzenia funkcji mixer()
+4)Kolejnym krokiem jest przeanalizowanie i zrozumienie zrewersowanej funkcji. W tym przypadku
+okazuje się, że funkcja mixer tworzy nowy ciąg tekstowy znak po znaku z podanego stringu. Co
+istotne, każdy kolejny znak jest wybierany pseudolosowo, za pomocą prostej funkcji
+matematycznej, która mówi który znak wybrać jako kolejny. Wybrany znak jest równocześnie
+usuwany z ciągu źródłowego. Tj. funkcja mixer po prostu "przetasowuje" kolejność znaków w
+podanym ciągu.
+5)Teraz musimy stworzyć funkcję odwrotną do funkcji mixer()
+6)W przypadku funkcji tasującej znaki najprościej będzie podać jej na wejściu tablicę "indeksów", tj.
+kolejnych liczb od 0 do 34 (wielkości flagi minus 1 włącznie), przetasować tę tablicę, a następnie
+zobaczyć gdzie który indeks "wylądował", co pozwoli na łatwe przywrócenie posiadanego.
+7)Operujemy tylko na indeksach - najpierw indeksy są przetasowane, a potem korzystając z .index sprawdzamy gdzie konkretny indeks wylądował.
+Iterując po liście potasowanych indeksów jesteśmy w stanie łatwo przywrócić je na swoje miejsce.
+

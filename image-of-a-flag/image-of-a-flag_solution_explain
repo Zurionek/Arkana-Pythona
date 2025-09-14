@@ -1,0 +1,12 @@
+Opis rozwiązania zadania
+
+1)Jak można się domyślić bazując na treści szkolenia, otrzymany plik BMP jest również poprawnym
+plikiem ZIP. Zmieniając rozszerzenie z BMP na ZIP możemy go w łatwy sposób rozpakować, otrzymując tym sposobem plik __main__.py.
+2)Robimy to najlepiej z poziomu konsoli komendą:
+$ cp image-of-a-flag.bmp image-of-a-flag.zip
+$ unzip image-of-a-flag.zip
+3)Otrzymujemy plik __main__.py
+4)Widzimy, że mamy podaną listę FLAG z wartościami stałych stworzony po zakodowaniu.
+5)Szukamy funkcji kodującej w kodzie - jest to t = [ord(ch) * 19124172783 for ch in t]
+6)Teraz musimy odwrócić tę logikę i stworzyć funkcję dekodującą
+7)Robimy to poprzez odwrócenie logiki zawartej w "t": decoded_flag = ''.join([chr(f//19124172783) for f in FLAG])

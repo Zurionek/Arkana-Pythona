@@ -1,0 +1,15 @@
+Opis rozwiązania zadania
+1)Rozczytujemy drzewo - jest to dosyć proste zadanie
+2)Rozczytujemy od lewej do prawej, najpierw nazwa, potem argument, co się dzieje w funkcji itd
+3)Tworzymy funkcję w pliku
+4)Mamy wynik zakodowanej flagi, tak więc aby do niej dotrzeć potrzebujemy stworzyć funkcję rozkodowującą
+5)Funkcja rozkodowująca musi być dokładnie odwrotna do funkcji kodującej
+6)Aby stworzyc funkcję rozkodowującą musimy odwrócić najpierw operację XOR, potem odejmowanie i na końcu dzielenie
+7)Pamiętaj, jak odwraca się w łatwy sposób operację XOR:
+
+Matematycznie zapisuje się to jako:
+(A ^ B) ^ B = A
+
+Przykład:
+12 ^ 25 = 21 (szyfrowanie)
+21 ^ 25 = 12 (odszyfrowywanie)
